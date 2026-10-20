@@ -1,0 +1,572 @@
+{
+  "version": "1.0",
+  "status": "FROZEN_PRE_REGISTRATION",
+  "date": "2026-10-09",
+  "governing_rules": [
+    "R13",
+    "R16",
+    "R22",
+    "R27"
+  ],
+  "provenance": {
+    "source_platforms": "Real-world tech recruitment platforms in Vietnam (TopCV, ITviec, VietnamWorks)",
+    "collection_date": "September 2026",
+    "extractor_model": "gemini-1.5-flash",
+    "extraction_prompt": "Analyze the following Job Description (JD) text and extract structured technical competencies conforming to the schema: title (string), level (string), domain (string), summary (string), mandatory_skills (list of objects with skill_name, category, importance, weight), preferred_skills (list of objects with skill_name, category, importance, weight).",
+    "primary_query_format": "Job Title: {title}. Domain: {domain}. Mandatory Technical Skills: {mandatory_skills}.",
+    "sensitivity_query_format": "Raw full text of Job Description file"
+  },
+  "queries": {
+    "JD_JAVA_01": {
+      "jd_id": "JD_JAVA_01",
+      "category": "JAVA",
+      "title": "Backend Developer (Java / Spring Boot)",
+      "domain": "E-Commerce Platform",
+      "level": "Fresher",
+      "mandatory_skills": [
+        "Java",
+        "Spring Boot",
+        "Spring Security & JWT",
+        "Spring Data JPA / Hibernate",
+        "MySQL",
+        "Git"
+      ],
+      "preferred_skills": [
+        "RabbitMQ",
+        "Redis",
+        "Docker",
+        "Swagger / OpenAPI"
+      ],
+      "primary_query": "Job Title: Backend Developer (Java / Spring Boot). Domain: E-Commerce Platform. Mandatory Technical Skills: Java, Spring Boot, Spring Security & JWT, Spring Data JPA / Hibernate, MySQL, Git.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_01.txt",
+      "sensitivity_raw_sha256": "2eb38121df098d9422aa7c4b85d9762b451c167ca67e7446822f89ddb00cb8b2"
+    },
+    "JD_JAVA_02": {
+      "jd_id": "JD_JAVA_02",
+      "category": "JAVA",
+      "title": "Junior Java Developer",
+      "domain": "Enterprise Web & HRM Systems",
+      "level": "Intern/Fresher",
+      "mandatory_skills": [
+        "Java",
+        "Spring Boot",
+        "Spring Data JPA",
+        "PostgreSQL",
+        "JUnit"
+      ],
+      "preferred_skills": [
+        "Mockito",
+        "Maven",
+        "Flyway",
+        "Liquibase"
+      ],
+      "primary_query": "Job Title: Junior Java Developer. Domain: Enterprise Web & HRM Systems. Mandatory Technical Skills: Java, Spring Boot, Spring Data JPA, PostgreSQL, JUnit.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_02.txt",
+      "sensitivity_raw_sha256": "71c006576c6cd8862a15eac75e670c12d1b1c322e39060871bf0cbf22da0b7e5"
+    },
+    "JD_JAVA_03": {
+      "jd_id": "JD_JAVA_03",
+      "category": "JAVA",
+      "title": "Java Backend Fresher",
+      "domain": "Fintech & Payment Gateway",
+      "level": "Fresher",
+      "mandatory_skills": [
+        "Java",
+        "Spring Boot",
+        "Spring Data JPA",
+        "PostgreSQL",
+        "Redis"
+      ],
+      "preferred_skills": [
+        "Payment Gateway Integration",
+        "Spring Security",
+        "Docker",
+        "Cryptography & Security"
+      ],
+      "primary_query": "Job Title: Java Backend Fresher. Domain: Fintech & Payment Gateway. Mandatory Technical Skills: Java, Spring Boot, Spring Data JPA, PostgreSQL, Redis.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_03.txt",
+      "sensitivity_raw_sha256": "b32a00cdd4dff730481ea455632785402c88eb013e32c3f3cff081a83973b1a5"
+    },
+    "JD_JAVA_04": {
+      "jd_id": "JD_JAVA_04",
+      "category": "JAVA",
+      "title": "Java Microservices Fresher",
+      "domain": "Distributed Systems & Supply Chain",
+      "level": "Fresher",
+      "mandatory_skills": [
+        "Java 17+",
+        "Spring Boot",
+        "Apache Kafka",
+        "Spring Data JPA",
+        "MySQL/PostgreSQL",
+        "Docker / Docker Compose"
+      ],
+      "preferred_skills": [
+        "Spring Cloud Ecosystem",
+        "Circuit Breaker (Resilience4j)",
+        "Distributed Tracing"
+      ],
+      "primary_query": "Job Title: Java Microservices Fresher. Domain: Distributed Systems & Supply Chain. Mandatory Technical Skills: Java 17+, Spring Boot, Apache Kafka, Spring Data JPA, MySQL/PostgreSQL, Docker / Docker Compose.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_04.txt",
+      "sensitivity_raw_sha256": "38c4a4b26711f93349cf233bc5e702668fa8ce3368930dbe8eaabeb80245f20f"
+    },
+    "JD_JAVA_05": {
+      "jd_id": "JD_JAVA_05",
+      "category": "JAVA",
+      "title": "Backend Developer (Java/Spring Boot)",
+      "domain": "EdTech & Learning Management Systems (LMS)",
+      "level": "Fresher",
+      "mandatory_skills": [
+        "Java Core",
+        "Spring Boot",
+        "Spring Security",
+        "Spring Data JPA",
+        "MySQL"
+      ],
+      "preferred_skills": [
+        "AWS S3 / Cloudinary",
+        "Springdoc OpenAPI",
+        "JavaMailSender"
+      ],
+      "primary_query": "Job Title: Backend Developer (Java/Spring Boot). Domain: EdTech & Learning Management Systems (LMS). Mandatory Technical Skills: Java Core, Spring Boot, Spring Security, Spring Data JPA, MySQL.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_05.txt",
+      "sensitivity_raw_sha256": "b4ac495bf31a29be13bd96aecdc8b99a54a9b306136fd6411754e64f5985e3d7"
+    },
+    "JD_JAVA_06": {
+      "jd_id": "JD_JAVA_06",
+      "category": "JAVA",
+      "title": "Fresher Java Backend Engineer",
+      "domain": "Digital Healthcare & Telemedicine",
+      "level": "Fresher",
+      "mandatory_skills": [
+        "Java 11/17",
+        "Spring Boot",
+        "Spring Data JPA",
+        "PostgreSQL/MySQL"
+      ],
+      "preferred_skills": [
+        "MapStruct/ModelMapper",
+        "Redis"
+      ],
+      "primary_query": "Job Title: Fresher Java Backend Engineer. Domain: Digital Healthcare & Telemedicine. Mandatory Technical Skills: Java 11/17, Spring Boot, Spring Data JPA, PostgreSQL/MySQL.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_06.txt",
+      "sensitivity_raw_sha256": "1f6c9a617b40c333838ba55fb388644c8fdc0a2e48c5e4f64d606a924022ab64"
+    },
+    "JD_JAVA_07": {
+      "jd_id": "JD_JAVA_07",
+      "category": "JAVA",
+      "title": "Java API Developer",
+      "domain": "Real-time Messaging & Notification Services",
+      "level": "Fresher",
+      "mandatory_skills": [
+        "Java",
+        "Spring Boot",
+        "Spring WebSocket / STOMP",
+        "JWT & Spring Security",
+        "PostgreSQL / MySQL / MongoDB"
+      ],
+      "preferred_skills": [
+        "Redis Pub/Sub",
+        "Docker"
+      ],
+      "primary_query": "Job Title: Java API Developer. Domain: Real-time Messaging & Notification Services. Mandatory Technical Skills: Java, Spring Boot, Spring WebSocket / STOMP, JWT & Spring Security, PostgreSQL / MySQL / MongoDB.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_07.txt",
+      "sensitivity_raw_sha256": "1894594d69c0d0412f0bbb45464457ce2e16c594c4289c98be11010fc9962f0a"
+    },
+    "JD_JAVA_08": {
+      "jd_id": "JD_JAVA_08",
+      "category": "JAVA",
+      "title": "Junior Java Software Engineer",
+      "domain": "Logistics & Fleet Management",
+      "level": "Junior",
+      "mandatory_skills": [
+        "Java 17",
+        "Spring Boot",
+        "Spring Data JPA",
+        "MySQL/PostgreSQL",
+        "MapStruct",
+        "Bean Validation"
+      ],
+      "preferred_skills": [
+        "Flyway/Liquibase",
+        "JUnit 5",
+        "OpenAPI/Swagger"
+      ],
+      "primary_query": "Job Title: Junior Java Software Engineer. Domain: Logistics & Fleet Management. Mandatory Technical Skills: Java 17, Spring Boot, Spring Data JPA, MySQL/PostgreSQL, MapStruct, Bean Validation.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_08.txt",
+      "sensitivity_raw_sha256": "ff6c8b3647cfd7d070eada0c193fd664ce356ae1af707c5ea715853160aec4f9"
+    },
+    "JD_JAVA_09": {
+      "jd_id": "JD_JAVA_09",
+      "category": "JAVA",
+      "title": "Java Backend Intern",
+      "domain": "Digital Library & Bookstore API",
+      "level": "Intern",
+      "mandatory_skills": [
+        "Java Core",
+        "Spring Boot",
+        "Spring Data JPA",
+        "MySQL/PostgreSQL"
+      ],
+      "preferred_skills": [
+        "Spring Security & JWT",
+        "Swagger UI",
+        "Postman"
+      ],
+      "primary_query": "Job Title: Java Backend Intern. Domain: Digital Library & Bookstore API. Mandatory Technical Skills: Java Core, Spring Boot, Spring Data JPA, MySQL/PostgreSQL.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_09.txt",
+      "sensitivity_raw_sha256": "fa0757367ba435830195f8e96a0de868018e40f8d1acc7ac5692a9d5c02c0b29"
+    },
+    "JD_JAVA_10": {
+      "jd_id": "JD_JAVA_10",
+      "category": "JAVA",
+      "title": "Fresher Backend Developer",
+      "domain": "Hospitality & Online Travel Agency (OTA)",
+      "level": "Fresher",
+      "mandatory_skills": [
+        "Java 17",
+        "Spring Boot",
+        "Spring Security",
+        "Spring Data JPA",
+        "MySQL / PostgreSQL",
+        "Redis"
+      ],
+      "preferred_skills": [
+        "Docker",
+        "Unit Test"
+      ],
+      "primary_query": "Job Title: Fresher Backend Developer. Domain: Hospitality & Online Travel Agency (OTA). Mandatory Technical Skills: Java 17, Spring Boot, Spring Security, Spring Data JPA, MySQL / PostgreSQL, Redis.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_10.txt",
+      "sensitivity_raw_sha256": "a78580eedf19700f271c0ff9ea0da7fabd8665cf9da2da0fd8453fa1e7ffd955"
+    },
+    "JD_JAVA_11": {
+      "jd_id": "JD_JAVA_11",
+      "category": "JAVA",
+      "title": "Java Backend Developer",
+      "domain": "Social Network & Technical Blogging Platform",
+      "level": "Fresher / Junior",
+      "mandatory_skills": [
+        "Java 17",
+        "Spring Boot 3",
+        "Spring Security 6",
+        "Spring Data JPA / Hibernate",
+        "PostgreSQL",
+        "Git"
+      ],
+      "preferred_skills": [
+        "QueryDSL / JPA Specification",
+        "Docker Compose"
+      ],
+      "primary_query": "Job Title: Java Backend Developer. Domain: Social Network & Technical Blogging Platform. Mandatory Technical Skills: Java 17, Spring Boot 3, Spring Security 6, Spring Data JPA / Hibernate, PostgreSQL, Git.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_11.txt",
+      "sensitivity_raw_sha256": "cd5c5a7b6419dce1c264388dae5ce6fcb4c35ec952fa5c4d31d923bdd5de1fe1"
+    },
+    "JD_JAVA_12": {
+      "jd_id": "JD_JAVA_12",
+      "category": "JAVA",
+      "title": "Junior Java Developer",
+      "domain": "Enterprise Software & Financial Services",
+      "level": "Junior",
+      "mandatory_skills": [
+        "Java 17",
+        "Spring Boot",
+        "JUnit 5 & Mockito",
+        "PostgreSQL/MySQL"
+      ],
+      "preferred_skills": [
+        "Testcontainers",
+        "GitHub Actions",
+        "Liquibase/Flyway"
+      ],
+      "primary_query": "Job Title: Junior Java Developer. Domain: Enterprise Software & Financial Services. Mandatory Technical Skills: Java 17, Spring Boot, JUnit 5 & Mockito, PostgreSQL/MySQL.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_12.txt",
+      "sensitivity_raw_sha256": "1ace6ddcd63f3ee6953914c91f35d3acaf701c79c88f2a4b4cc46521a5da4584"
+    },
+    "JD_JAVA_13": {
+      "jd_id": "JD_JAVA_13",
+      "category": "JAVA",
+      "title": "Java Backend Fresher",
+      "domain": "FoodTech & Delivery Platform",
+      "level": "Fresher",
+      "mandatory_skills": [
+        "Java",
+        "Spring Boot",
+        "Spring Security & JWT",
+        "MySQL & Spring Data JPA",
+        "RabbitMQ / Kafka"
+      ],
+      "preferred_skills": [
+        "WebSocket",
+        "Redis"
+      ],
+      "primary_query": "Job Title: Java Backend Fresher. Domain: FoodTech & Delivery Platform. Mandatory Technical Skills: Java, Spring Boot, Spring Security & JWT, MySQL & Spring Data JPA, RabbitMQ / Kafka.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_13.txt",
+      "sensitivity_raw_sha256": "61196bb4eba0c28485bf803c5871ac48df2a1ccc5631d290a1de38845fe9be09"
+    },
+    "JD_JAVA_14": {
+      "jd_id": "JD_JAVA_14",
+      "category": "JAVA",
+      "title": "Backend Engineer (Java / Spring Boot)",
+      "domain": "HRTech & Recruitment Job Portal",
+      "level": "Intern/Fresher",
+      "mandatory_skills": [
+        "Java Core",
+        "Spring Boot",
+        "Spring Data JPA",
+        "Spring Security & JWT",
+        "PostgreSQL / MySQL"
+      ],
+      "preferred_skills": [
+        "Spring Mail",
+        "Redis",
+        "File Processing (PDF/Docx/Image)"
+      ],
+      "primary_query": "Job Title: Backend Engineer (Java / Spring Boot). Domain: HRTech & Recruitment Job Portal. Mandatory Technical Skills: Java Core, Spring Boot, Spring Data JPA, Spring Security & JWT, PostgreSQL / MySQL.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_14.txt",
+      "sensitivity_raw_sha256": "388699aa6d75f24f75b283b41353f932f7ca84f10db89b6f6c54cb0b93bf8543"
+    },
+    "JD_JAVA_15": {
+      "jd_id": "JD_JAVA_15",
+      "category": "JAVA",
+      "title": "Java Backend Fresher",
+      "domain": "Retail & Warehouse Inventory Management",
+      "level": "Fresher",
+      "mandatory_skills": [
+        "Java 17",
+        "Spring Boot",
+        "Spring Data JPA",
+        "MySQL/PostgreSQL",
+        "JWT"
+      ],
+      "preferred_skills": [
+        "Apache POI",
+        "JasperReports",
+        "JUnit 5",
+        "Maven",
+        "Docker"
+      ],
+      "primary_query": "Job Title: Java Backend Fresher. Domain: Retail & Warehouse Inventory Management. Mandatory Technical Skills: Java 17, Spring Boot, Spring Data JPA, MySQL/PostgreSQL, JWT.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_java_15.txt",
+      "sensitivity_raw_sha256": "6e10df799eb3b98313553465c4fba70b64a07ec668b1aaae4d6531e283dfd613"
+    },
+    "JD_REACT_01": {
+      "jd_id": "JD_REACT_01",
+      "category": "REACT",
+      "title": "Frontend Developer Fresher (ReactJS / TypeScript)",
+      "domain": "E-Commerce Storefront & Order Management",
+      "level": "Fresher",
+      "mandatory_skills": [
+        "ReactJS",
+        "TypeScript",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "Git"
+      ],
+      "preferred_skills": [
+        "React Router",
+        "Vite",
+        "ESLint / Prettier"
+      ],
+      "primary_query": "Job Title: Frontend Developer Fresher (ReactJS / TypeScript). Domain: E-Commerce Storefront & Order Management. Mandatory Technical Skills: ReactJS, TypeScript, Redux Toolkit, Tailwind CSS, Git.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_react_01.txt",
+      "sensitivity_raw_sha256": "180ddd25390813d28aa0220381a7a5421741a31520940f907873f95248015793"
+    },
+    "JD_REACT_02": {
+      "jd_id": "JD_REACT_02",
+      "category": "REACT",
+      "title": "ReactJS / TypeScript Intern",
+      "domain": "Digital Media & Streaming SPA",
+      "level": "Intern/Fresher",
+      "mandatory_skills": [
+        "HTML5/CSS3",
+        "JavaScript (ES6+)",
+        "TypeScript",
+        "ReactJS"
+      ],
+      "preferred_skills": [
+        "Tailwind CSS",
+        "CSS Modules",
+        "Styled Components"
+      ],
+      "primary_query": "Job Title: ReactJS / TypeScript Intern. Domain: Digital Media & Streaming SPA. Mandatory Technical Skills: HTML5/CSS3, JavaScript (ES6+), TypeScript, ReactJS.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_react_02.txt",
+      "sensitivity_raw_sha256": "7d8f14a748232825744eea644d1e1a19fa62955f695d4fca1e784b9191db2002"
+    },
+    "JD_REACT_03": {
+      "jd_id": "JD_REACT_03",
+      "category": "REACT",
+      "title": "Fullstack TypeScript Fresher",
+      "domain": "Fullstack Web Application Development",
+      "level": "Fresher",
+      "mandatory_skills": [
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "ReactJS",
+        "Node.js / Express.js",
+        "JWT Authentication",
+        "MongoDB / PostgreSQL / MySQL"
+      ],
+      "preferred_skills": [
+        "Prisma / TypeORM",
+        "Redux Toolkit / Zustand",
+        "Docker"
+      ],
+      "primary_query": "Job Title: Fullstack TypeScript Fresher. Domain: Fullstack Web Application Development. Mandatory Technical Skills: TypeScript, JavaScript (ES6+), ReactJS, Node.js / Express.js, JWT Authentication, MongoDB / PostgreSQL / MySQL.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_react_03.txt",
+      "sensitivity_raw_sha256": "d79245cf954bb189eed018a5fa8e30edb3074b7795a947ddae4cbb4f03996dcd"
+    },
+    "JD_REACT_04": {
+      "jd_id": "JD_REACT_04",
+      "category": "REACT",
+      "title": "Frontend Engineer",
+      "domain": "B2B SaaS Analytics & Reporting Dashboard",
+      "level": "Fresher",
+      "mandatory_skills": [
+        "ReactJS",
+        "TypeScript",
+        "TanStack React Query",
+        "Tailwind CSS",
+        "Recharts / Chart.js"
+      ],
+      "preferred_skills": [
+        "Shadcn UI",
+        "Radix UI",
+        "TanStack Table",
+        "Feature-Sliced Design"
+      ],
+      "primary_query": "Job Title: Frontend Engineer. Domain: B2B SaaS Analytics & Reporting Dashboard. Mandatory Technical Skills: ReactJS, TypeScript, TanStack React Query, Tailwind CSS, Recharts / Chart.js.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_react_04.txt",
+      "sensitivity_raw_sha256": "ad5fb4ee301b432c800617f11125c4d11de1f2be6775db177ca443802e9ab0f1"
+    },
+    "JD_REACT_05": {
+      "jd_id": "JD_REACT_05",
+      "category": "REACT",
+      "title": "Next.js & TypeScript Frontend Developer",
+      "domain": "High-Performance Web & Digital Commerce",
+      "level": "Fresher / Junior",
+      "mandatory_skills": [
+        "ReactJS",
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS",
+        "RESTful API / GraphQL"
+      ],
+      "preferred_skills": [
+        "NextAuth / OAuth2",
+        "Zod",
+        "Vercel",
+        "Docker"
+      ],
+      "primary_query": "Job Title: Next.js & TypeScript Frontend Developer. Domain: High-Performance Web & Digital Commerce. Mandatory Technical Skills: ReactJS, TypeScript, Next.js, Tailwind CSS, RESTful API / GraphQL.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_react_05.txt",
+      "sensitivity_raw_sha256": "43fc9cee7acd072c1aebf3bdf4dfc1e9ae5ec4d6a9dd792eb982e6ca16c1f760"
+    },
+    "JD_REACT_06": {
+      "jd_id": "JD_REACT_06",
+      "category": "REACT",
+      "title": "Junior ReactJS Developer",
+      "domain": "Productivity & Collaborative Kanban System",
+      "level": "Junior",
+      "mandatory_skills": [
+        "ReactJS",
+        "TypeScript",
+        "Redux Toolkit / Zustand",
+        "React Hook Form & Zod/Yup",
+        "Tailwind CSS / CSS-in-JS"
+      ],
+      "preferred_skills": [
+        "Drag-and-Drop (dnd-kit / react-beautiful-dnd)",
+        "RESTful API / GraphQL"
+      ],
+      "primary_query": "Job Title: Junior ReactJS Developer. Domain: Productivity & Collaborative Kanban System. Mandatory Technical Skills: ReactJS, TypeScript, Redux Toolkit / Zustand, React Hook Form & Zod/Yup, Tailwind CSS / CSS-in-JS.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_react_06.txt",
+      "sensitivity_raw_sha256": "0d7eda45d72ed2f257144cb73187dfa257461223f6c6775a17bc35a311ffc29c"
+    },
+    "JD_REACT_07": {
+      "jd_id": "JD_REACT_07",
+      "category": "REACT",
+      "title": "Frontend Developer Intern/Fresher",
+      "domain": "Real-Time Collaboration & Messaging",
+      "level": "Intern/Fresher",
+      "mandatory_skills": [
+        "ReactJS",
+        "TypeScript",
+        "WebSocket / Socket.io-client",
+        "Zustand / Redux Toolkit / React Context API",
+        "Tailwind CSS / SCSS"
+      ],
+      "preferred_skills": [
+        "File/Image Preview & Web Notification API",
+        "Tối ưu render danh sách dài"
+      ],
+      "primary_query": "Job Title: Frontend Developer Intern/Fresher. Domain: Real-Time Collaboration & Messaging. Mandatory Technical Skills: ReactJS, TypeScript, WebSocket / Socket.io-client, Zustand / Redux Toolkit / React Context API, Tailwind CSS / SCSS.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_react_07.txt",
+      "sensitivity_raw_sha256": "78299f1cbde880c94355395db257bc1226a1938d4d41c31dcd0effb9c61816e1"
+    },
+    "JD_REACT_08": {
+      "jd_id": "JD_REACT_08",
+      "category": "REACT",
+      "title": "React TypeScript Fresher",
+      "domain": "Personal Finance & Digital Banking Portal",
+      "level": "Fresher",
+      "mandatory_skills": [
+        "ReactJS",
+        "TypeScript",
+        "React Hook Form",
+        "Zod / Yup",
+        "Authentication & Axios Interceptors",
+        "Material UI / Ant Design / Shadcn UI / Tailwind CSS"
+      ],
+      "preferred_skills": [
+        "Vitest / Jest & React Testing Library"
+      ],
+      "primary_query": "Job Title: React TypeScript Fresher. Domain: Personal Finance & Digital Banking Portal. Mandatory Technical Skills: ReactJS, TypeScript, React Hook Form, Zod / Yup, Authentication & Axios Interceptors, Material UI / Ant Design / Shadcn UI / Tailwind CSS.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_react_08.txt",
+      "sensitivity_raw_sha256": "9163c165e8bc1c397e095aa36814ec2518a85efaeb10650aef8eb21ccf322a49"
+    },
+    "JD_REACT_09": {
+      "jd_id": "JD_REACT_09",
+      "category": "REACT",
+      "title": "Frontend Web Developer",
+      "domain": "Service Discovery & Booking Platform",
+      "level": "Intern / Fresher",
+      "mandatory_skills": [
+        "ReactJS",
+        "TypeScript",
+        "React Router",
+        "Axios"
+      ],
+      "preferred_skills": [
+        "TanStack React Query",
+        "Tailwind CSS",
+        "React Testing Library"
+      ],
+      "primary_query": "Job Title: Frontend Web Developer. Domain: Service Discovery & Booking Platform. Mandatory Technical Skills: ReactJS, TypeScript, React Router, Axios.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_react_09.txt",
+      "sensitivity_raw_sha256": "44d4d1b4a5b1571bfa89ff4856c0e992e7930a566af7b30db8d2d6c4a1fbb8af"
+    },
+    "JD_REACT_10": {
+      "jd_id": "JD_REACT_10",
+      "category": "REACT",
+      "title": "Fullstack React & TypeScript Developer",
+      "domain": "EdTech Fullstack Application",
+      "level": "Fresher / Junior",
+      "mandatory_skills": [
+        "TypeScript",
+        "ReactJS",
+        "Node.js / Express / NestJS",
+        "Redux Toolkit / Zustand",
+        "Prisma / TypeORM / Mongoose",
+        "Git"
+      ],
+      "preferred_skills": [
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Docker Compose"
+      ],
+      "primary_query": "Job Title: Fullstack React & TypeScript Developer. Domain: EdTech Fullstack Application. Mandatory Technical Skills: TypeScript, ReactJS, Node.js / Express / NestJS, Redux Toolkit / Zustand, Prisma / TypeORM / Mongoose, Git.",
+      "sensitivity_raw_file": "dataset/jd_raw/jd_react_10.txt",
+      "sensitivity_raw_sha256": "a506fe1dc28fd264907593ec6e5af3cc0c94c2142c00995f284e4d372e1228ce"
+    }
+  }
+}

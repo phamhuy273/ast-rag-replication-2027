@@ -1,0 +1,16 @@
+\section{Conclusion}
+\label{sec:conclusion}
+In this ERA paper, we presented a controlled $2 \times 2$ factorial evaluation crossing chunking strategy with hierarchical context headers across 40 repositories. 
+At reranking, line-window chunking with headers achieved the highest performance ($\text{NDCG@10} = 0.621$), significantly outperforming AST chunks with headers ($\Delta = -0.134$, $p = 0.0003$). 
+While context headers provide an essential boost for AST chunks ($\Delta = +0.146$, $p_{\mathrm{Holm}} = 0.0001$), line windows without headers significantly outperform AST chunks with headers ($\Delta = -0.093$, $p_{\mathrm{Holm}} = 0.0438$), and strongly outperform AST chunks without headers ($\Delta = -0.239$, $p_{\mathrm{Holm}} < 0.001$). 
+Following parser grammar expansions, the AST fallback rate was $0.0\%$, confirming that node-level AST extraction without sibling merging does not surpass sliding windows in requirement evidence retrieval. 
+We pose three open questions for the community:
+(1)~\textit{Can graph-enriched headers bridge the information gap for fine-grained AST chunks?} 
+(2)~\textit{How should code-RAG benchmarks weigh syntactic integrity against contextual information density?} 
+(3)~\textit{How can requirement evidence retrieval best assist practitioners in verifying codebase capabilities?}
+
+\section*{Data Availability}
+The replication package---including corpus source code, frozen queries, Tree-sitter parsers, 882 blinded human-labeled pairs, adjudication records, and benchmark scripts---is available at: \url{https://anonymous.4open.science/r/ast-rag-replication-2027}.
+
+% \section*{Acknowledgments}
+% Omitted for double-anonymous review. Generative AI tools (Google Antigravity, Anthropic Claude, Gemini) assisted in drafting text, code refactoring, and statistical script generation; all outputs were verified by the authors. Relevance labels were produced entirely by human annotators without AI intervention.

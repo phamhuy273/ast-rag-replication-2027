@@ -1,0 +1,26 @@
+\section{Research Plan and Roadmap}
+\label{sec:plan}
+
+Table~\ref{tab:roadmap} delineates planned phases and mitigations for RQ3 and RQ4:
+\textbf{P1} expands to 100 repos (Java, TS, Python, Go) and 50 JDs/issues to evaluate linguistic generality under mixed-effects ANOVA;
+\textbf{P2} injects call-graph/dependency context via precomputed SCIP/LSIF indexes to test whether relational context bridges the semantic gap for AST chunks;
+\textbf{P3} executes a Latin-square human verification study with 20 developers measuring requirement verification accuracy, inspection time, and confidence.
+
+\begin{table}[t]
+\caption{Structured Research Roadmap and Milestones}
+\label{tab:roadmap}
+\centering\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{0.92}
+\begin{threeparttable}
+\begin{tabular}{@{}lp{0.82in}p{1.02in}p{1.02in}@{}}
+\toprule
+Phase & Objective & Target Data & Analysis Method \\
+\midrule
+\textbf{P1} & Corpus \& Query Expansion (RQ3) & 100 repos (Java, TS, Python, Go); 50 JDs, RFPs, GitHub issues & Replicate $2 \times 2$ factorial design; mixed-effects ANOVA \\
+\textbf{P2} & Graph-Enriched Headers (RQ3) & Call-graph \& import context vs. file-path headers & Paired Wilcoxon-Holm tests; ablation across header depths \\
+\textbf{P3} & Human Verification Study (RQ4) & $N=20$ professional software developers & Task completion accuracy, inspection time, confidence \\
+\bottomrule
+\end{tabular}
+\end{threeparttable}
+\end{table}

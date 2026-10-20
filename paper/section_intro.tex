@@ -1,0 +1,31 @@
+\section{Introduction}
+\label{sec:intro}
+
+Locating source code that provides concrete evidence for a technical requirement is fundamental in software analysis and capability assessment. 
+While classical requirements traceability links formal specifications to code artifacts~\cite{antoniol2002traceability,gao2024triad,kuang2023analyzing}, modern software engineering frequently demands verifying whether a codebase implements higher-level framework capabilities (e.g., reactive state management or token authentication). 
+We formalize this task as \textbf{Requirement \& Technical Capability Evidence Retrieval}: given natural-language technical requirements---instantiated via mandatory skill specifications from job descriptions (JDs)---the objective is to retrieve the specific code chunks that directly evidence their concrete implementation across multi-file repositories, without requiring explicit requirement IDs.
+
+In retrieval-augmented software engineering pipelines, source code must be segmented into chunks for neural encoding. 
+Chunking via abstract syntax trees (ASTs) is widely advocated to preserve semantic units (methods, declarations)~\cite{zhang2025cast}. 
+However, recent empirical studies on code completion indicate that structure-aware chunking does not reliably outperform simple sliding windows~\cite{wu2026chunking}, and line-based segmentations match syntax-aware splitting across compute budgets~\cite{galimzyanov2025practical}. 
+Crucially, prior work conflates chunk boundaries with the contextual metadata (file path, enclosing class, method signature) prepended to chunks. 
+Whether structural chunking provides distinct advantages once metadata is controlled remains unexamined for requirement evidence retrieval.
+
+In this Early Research Achievements (ERA) paper, we present a controlled $2 \times 2$ factorial evaluation crossing chunking strategy (AST-first vs. 50-line windows) with hierarchical context headers (present vs. absent). We address four research questions:
+\textbf{RQ1:} Does prepending a context header improve evidence retrieval from code chunks?
+\textbf{RQ2:} Does AST-first chunking outperform line windows under equivalent header conditions?
+\textbf{RQ3 (Roadmap):} Which header components drive retrieval gains, and how do trade-offs generalize across languages?
+\textbf{RQ4 (Roadmap):} Does retrieved evidence improve human accuracy and confidence in requirement verification?
+
+We evaluate RQ1 and RQ2 across 25 JDs and 40 open-source repositories (20 Java Spring Boot, 20 React/TypeScript; 872 chunks) at three tiers: BM25, dense bi-encoder (BGE-M3), and cross-encoder reranking (BGE-Reranker-Base), evaluated against 882 blinded human-labeled pairs ($\kappa_w = 0.9822$). 
+Findings reveal: 
+(1)~Headers significantly improve reranking for AST chunks ($\Delta = +0.146$, $p_{\mathrm{Holm}} = 0.0001$), but offer negligible gain for line windows ($\Delta = +0.041$, $p_{\mathrm{Holm}} = 0.2411$). 
+(2)~Without headers, line windows significantly outperform AST chunks ($\Delta = -0.239$, $p_{\mathrm{Holm}} < 0.001$). 
+(3)~Headerless line windows significantly outperform AST chunks with headers ($\Delta = -0.093$, $p_{\mathrm{Holm}} = 0.0438$). 
+(4)~Line windows with headers achieve highest overall effectiveness ($\text{NDCG@10} = 0.621$), outperforming AST with headers ($\Delta = -0.134$, $p = 0.0003$). 
+(5)~Following parser expansion, AST fallback rate is $0.0\%$, showing that the performance gap is not caused by fallback degeneration.
+
+\textbf{Contributions:} (1)~\textit{Factorial Framework:} Isolating chunking boundaries from context headers in requirement evidence retrieval. 
+(2)~\textit{Empirical Findings:} Evidence that sliding windows match or exceed AST chunking, with headers acting as an essential anchor for AST chunks to compensate for stripped class/file namespace context. 
+(3)~\textit{Curated Benchmark:} A replication package with 882 blinded dual-annotated pairs ($\kappa_w = 0.9822$, 100\% Judged@5, zero orphaned pairs). 
+(4)~\textit{ERA Roadmap:} An actionable research agenda addressing header components, dependency graphs, and human practitioner verification.
