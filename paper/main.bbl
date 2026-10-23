@@ -28,8 +28,8 @@ G.~Antoniol, G.~Canfora, G.~Casazza, A.~D. Lucia, and E.~Merlo, ``Recovering
 
 \bibitem{gao2024triad}
 H.~Gao, H.~Kuang, W.~K.~G. Assun{\c{c}}{\~{a}}o, C.~Mayr-Dorn, G.~Rong,
-  H.~Zhang, X.~Ma, and A.~Egyed, ``Triad: Automated traceability recovery based
-  on biterm-enhanced deduction of transitive links among artifacts,'' in
+  H.~Zhang, X.~Ma, and A.~Egyed, ``{TRIAD}: Automated traceability recovery
+  based on biterm-enhanced deduction of transitive links among artifacts,'' in
   \emph{Proceedings of the {IEEE}/{ACM} 46th International Conference on
   Software Engineering ({ICSE})}, 2024, pp. 2668--2680.
 
@@ -40,7 +40,7 @@ Y.~Zhang, X.~Zhao, Z.~Z. Wang, C.~Yang, J.~Wei, and T.~Wu, ``{cAST}: Enhancing
   Linguistics: EMNLP 2025}, 2025, pp. 8106--8116.
 
 \bibitem{wu2026chunking}
-X.~Wu, J.~Gong, G.~Jahangirova, and J.~Zhang, ``How does chunking affect
+X.~Wu, J.~Gong, G.~Jahangirova, and J.~M. Zhang, ``How does chunking affect
   retrieval-augmented code completion? a controlled empirical study,''
   \emph{arXiv preprint arXiv:2605.04763}, 2026.
 
@@ -67,9 +67,10 @@ H.~Husain, H.-H. Wu, T.~Gazit, M.~Allamanis, and M.~Brockschmidt,
   \emph{arXiv preprint arXiv:1909.09436}, 2019.
 
 \bibitem{chen2024bgem3}
-J.~Chen, S.~Xiao, P.~Zhang, K.~Luo, D.~Lian, and Z.~Liu, ``{BGE M3-Embedding}:
-  Multi-lingual, multi-functionality, multi-granularity text embeddings through
-  self-knowledge distillation,'' \emph{arXiv preprint arXiv:2402.03216}, 2024.
+J.~Chen, S.~Xiao, P.~Zhang, K.~Luo, D.~Lian, and Z.~Liu, ``{BGE}
+  {M3}-embedding: Multi-lingual, multi-functionality, multi-granularity text
+  embeddings through self-knowledge distillation,'' \emph{arXiv preprint
+  arXiv:2402.03216}, 2024.
 
 \bibitem{hu2023revisiting}
 F.~Hu, Y.~Wang, L.~Du, X.~Li, H.~Zhang, S.~Han, and D.~Zhang, ``Revisiting code
@@ -81,7 +82,7 @@ F.~Hu, Y.~Wang, L.~Du, X.~Li, H.~Zhang, S.~Han, and D.~Zhang, ``Revisiting code
 D.~Zheng, Y.~Wang, W.~Chen, J.~Chen, and Z.~Zheng, ``{CoSTV}: Accelerating code
   search with two-stage paradigm and vector retrieval,'' in \emph{Proceedings
   of the 31st Asia-Pacific Software Engineering Conference ({APSEC})}.\hskip
-  1em plus 0.5em minus 0.4em\relax {IEEE}, 2024, pp. 1--10.
+  1em plus 0.5em minus 0.4em\relax {IEEE}, 2024.
 
 \bibitem{zhang2023repocoder}
 F.~Zhang, B.~Chen, Y.~Zhang, J.~Keung, J.~Liu, D.~Zan, Y.~Mao, J.-G. Lou, and
@@ -95,10 +96,11 @@ T.~Liu, C.~Xu, and J.~McAuley, ``{RepoBench}: Benchmarking complete code
   on Learning Representations ({ICLR})}, 2024.
 
 \bibitem{ding2023crosscodeeval}
-Y.~Ding, Z.~Wang, W.~Wang, H.~Peng, S.~Zou, J.~McAuley, and T.~Chen,
-  ``{CrossCodeEval}: A diverse and multilingual benchmark for cross-file code
-  completion,'' in \emph{Advances in Neural Information Processing Systems
-  ({NeurIPS})}, 2023.
+Y.~Ding, Z.~Wang, W.~U. Ahmad, H.~Ding, M.~Tan, N.~Jain, M.~K. Ramanathan,
+  R.~Nallapati, P.~Bhatia, D.~Roth, and B.~Xiang, ``{CrossCodeEval}: A diverse
+  and multilingual benchmark for cross-file code completion,'' in
+  \emph{Advances in Neural Information Processing Systems ({NeurIPS}), Datasets
+  and Benchmarks Track}, 2023.
 
 \bibitem{montandon2019identifying}
 J.~E. Montandon, L.~L. Silva, and M.~T. Valente, ``Identifying experts in
@@ -107,10 +109,21 @@ J.~E. Montandon, L.~L. Silva, and M.~T. Valente, ``Identifying experts in
   Repositories ({MSR})}.\hskip 1em plus 0.5em minus 0.4em\relax {IEEE}, 2019,
   pp. 276--287.
 
-\bibitem{xiao2023cpack}
-S.~Xiao, Z.~Liu, P.~Zhang, and N.~Muennighoff, ``{C-Pack}: Packaged resources
-  to advance general {Chinese} and multilingual embedding,'' \emph{arXiv
-  preprint arXiv:2309.07597}, 2023.
+\bibitem{robertson2009bm25}
+S.~Robertson and H.~Zaragoza, ``The probabilistic relevance framework: {BM25}
+  and beyond,'' \emph{Foundations and Trends in Information Retrieval}, vol.~3,
+  no.~4, pp. 333--389, 2009.
+
+\bibitem{xiao2024cpack}
+S.~Xiao, Z.~Liu, P.~Zhang, N.~Muennighoff, D.~Lian, and J.-Y. Nie, ``{C-Pack}:
+  Packed resources for general {Chinese} embeddings,'' in \emph{Proceedings of
+  the 47th International {ACM} {SIGIR} Conference on Research and Development
+  in Information Retrieval ({SIGIR})}, 2024.
+
+\bibitem{jarvelin2002cumulated}
+K.~J{\"a}rvelin and J.~Kek{\"a}l{\"a}inen, ``Cumulated gain-based evaluation of
+  {IR} techniques,'' \emph{ACM Transactions on Information Systems}, vol.~20,
+  no.~4, pp. 422--446, 2002.
 
 \bibitem{buckley2004bpref}
 C.~Buckley and E.~M. Voorhees, ``Retrieval evaluation with incomplete

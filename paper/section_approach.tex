@@ -10,29 +10,29 @@ As documented in \texttt{sampling\_\allowbreak frame\_\allowbreak log.json}, rep
 To focus evaluation on authentic capability evidence and avoid diluting the corpus with build artifacts, third-party libraries, test mocks, or auto-generated configuration, curation targeted the core functional architecture modules (mean 4.7 files per repository, 189 files total) where business logic, architectural patterns, and framework capabilities reside.
 Repository licenses encompass 19 MIT (47.5\%), 16 Public GitHub default copyright (40.0\%), 4 Apache-2.0 (10.0\%), and 1 GNU AGPL-3.0 (2.5\%); all source text is redistributed in our replication package under original author copyright.
 Queries represent 25 public job descriptions (15 Java backend, 10 React/TypeScript frontend) with mandatory technical skill requirements extracted via a frozen prompt on \texttt{gemini-\allowbreak 1.5-flash} (\texttt{queries\_\allowbreak frozen.json}). 
-For each query, retrieval evaluates across the full candidate space: 434 chunks for line conditions and 438 chunks for AST conditions (872 total chunks in the corpus).
+For each query, retrieval evaluates across the full candidate space: 434 chunks for line conditions and 438 chunks for AST conditions (872 chunk instances across the two strategies).
 
 \subsection{Factorial Conditions and Retrieval Pipeline}
 \label{sec:approach:factorial}
 We evaluate two orthogonal dimensions:
-\textbf{Chunking Strategy:} \textit{Line-window chunking} slices files into 50-LOC windows with 10-LOC overlap (step 40 LOC, minimum 6 LOC; 434 chunks, mean 41.0 LOC, median 50 LOC, 100\% line coverage across all 189 files, 28.6\% exceeding 512 tokens, 56.0\% cutting syntactic boundaries). 
-\textit{AST-first chunking} extracts node-level units using Tree-sitter parsers expanded to modern constructs: 438 chunks (134 methods/constructors, 96 arrow functions, 86 component wrappers, 62 functions, 28 class/interface/record/enum declarations, and 32 type/constant/config declarations; mean 26.7 LOC, median 16 LOC, 15.8\% exceeding 512 tokens). 
+\textbf{Chunking Strategy:} \textit{Line-window chunking} slices files into 50 lines of code (LOC) windows with 10-LOC overlap (step 40 LOC, minimum 6 LOC; 434 chunks, mean 41.0 LOC, median 50 LOC, 100\% line coverage across all 189 files, 28.6\% exceeding 512 tokens, 56.0\% cutting syntactic boundaries). 
+\textit{AST-first chunking} extracts node-level units using Tree-sitter\footnote{\url{https://tree-sitter.github.io/}} parsers expanded to modern constructs: 438 chunks (134 methods/constructors, 96 arrow functions, 86 component wrappers, 62 functions, 28 class/interface/record/enum declarations, and 32 type/constant/config declarations; mean 26.7 LOC, median 16 LOC, 15.8\% exceeding 512 tokens). 
 Due to $6 \le \text{LOC} \le 85$ filtering, AST chunks cover 69.0\% of lines (10,585/15,351) across 183/189 files (6 files contain zero AST chunks), maintaining 87.2\% outer-boundary alignment (56 module-wrapped functions classified as cut by interval bounds, though representing intact AST nodes). 
 Files lacking extractable units fall back to line windows (measured $0.0\%$, 0/438 chunks).
 \textbf{Context Header Condition:} \textit{Without Header} contains raw code. For \textit{With Header}, line chunks prepend File and Lines cues (100\%); AST chunks prepend File (100\%), enclosing Class (35.6\%), Method (100\%), and Lines (100\%) (\texttt{// File: <path> \textbackslash n [// Class: <name> \textbackslash n] // Method: <name> \textbackslash n // Lines: <start>-<end>}).
-\textbf{Retrieval Tiers:} (1)~\textit{BM25} (lexical baseline). (2)~\textit{Dense} BAAI/bge-m3~\cite{chen2024bgem3} (1024d embeddings, cosine similarity). (3)~\textit{Reranking} BAAI/bge-reranker-base~\cite{xiao2023cpack} (cross-encoder rescoring top-20 dense candidates).
+\textbf{Retrieval Tiers:} (1)~\textit{BM25}~\cite{robertson2009bm25} (lexical baseline). (2)~\textit{Dense} BAAI/bge-m3~\cite{chen2024bgem3} (1024d embeddings, cosine similarity). (3)~\textit{Reranking} BAAI/bge-reranker-base~\cite{xiao2024cpack} (cross-encoder rescoring top-20 dense candidates).
 
 \subsection{Unified Blinded Pooling Protocol}
 \label{sec:approach:pooling}
 To prevent system bias, we executed a single-wave Cranfield/TREC pooling protocol: top-5 candidates from all 12 systems (BM25, Dense, Rerank $\times$ 4 conditions) were pooled, yielding 1,500 candidates deduplicated to 882 unique pairs. 
-Two SE annotators independently labeled all 882 pairs on a pre-registered 3-point relevance rubric: \textbf{0} (irrelevant/boilerplate: imports, standard configuration, or code lacking implementation of the target capability), \textbf{1} (partially relevant/indirect: interface signatures, type definitions, or peripheral helpers), and \textbf{2} (direct evidence: concrete, executable implementation directly demonstrating the requested technical capability). 
+Two software engineering (SE) annotators independently labeled all 882 pairs on a pre-specified 3-point relevance rubric: \textbf{0} (irrelevant/boilerplate: imports, standard configuration, or code lacking implementation of the target capability), \textbf{1} (partially relevant/indirect: interface signatures, type definitions, or peripheral helpers), and \textbf{2} (direct evidence: concrete, executable implementation directly demonstrating the requested technical capability). 
 Annotators were fully blinded to strategy, header condition, tier, rank, and score. 
 Inter-annotator agreement reached almost perfect concordance: quadratic-weighted Cohen's $\kappa = 0.9822$ (linear $\kappa = 0.9764$, unweighted $\kappa = 0.9708$, $98.07\%$ exact agreement). 
 The 17 disagreements were adjudicated by a Lead Adjudicator using standardized rubrics, yielding complete coverage ($\text{Judged@3} = 100.0\%$, $\text{Judged@5} = 100.0\%$) and zero orphaned pairs.
 
 \subsection{Evaluation Metrics and Hypothesis Testing}
 \label{sec:approach:metrics}
-The primary metric is $\text{NDCG@10}$ (linear gain $\mathrm{rel}_i/\log_2(i+1)$). 
-Unjudged items receive relevance 0; we also report binary preference (\texttt{bpref})~\cite{buckley2004bpref}, $\text{NDCG@1}$, $\text{MRR@10}$, and $\text{Judged@10}$. 
+The primary metric is $\text{NDCG@10}$~\cite{jarvelin2002cumulated} (linear gain $\mathrm{rel}_i/\log_2(i+1)$). 
+Unjudged items receive relevance 0; we also report binary preference (\texttt{bpref})~\cite{buckley2004bpref}, $\text{NDCG@1}$, mean reciprocal rank ($\text{MRR@10}$), and $\text{Judged@10}$. 
 The pre-specified confirmatory family (defined in an internal analysis plan) tests four paired comparisons over $N=25$ queries at the rerank tier: \textbf{Comp 1} (\astH\ vs. \lineN), \textbf{Comp 2} (\astN\ vs. \lineN), \textbf{Comp 3} (\astH\ vs. \astN), and \textbf{Comp 4} (\lineH\ vs. \lineN) via two-sided Wilcoxon signed-rank tests~\cite{wilcoxon1945individual} with Holm-Bonferroni correction~\cite{holm1979simple} ($\alpha = 0.05$). 
-We report paired effect sizes $\Delta$ with 95\% bootstrap CIs (10,000 resamples), plus exploratory contrast \textbf{Comp 5} (\astH\ vs. \lineH).
+We report paired effect sizes $\Delta$ with 95\% bootstrap CIs (10,000 resamples), plus exploratory contrast \textbf{Comp 5} (\astH\ vs. \lineH). Wilcoxon $p$-values are exact where no ties occur and use the normal approximation otherwise.
