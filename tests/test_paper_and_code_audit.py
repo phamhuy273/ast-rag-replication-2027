@@ -109,7 +109,7 @@ class TestPaperAndCodeAudit:
 
     def test_zero_stale_overlap_phrasing_in_paper(self):
         """Assert overlap phrasing specifies 26.4% involved and 16.8% redundant."""
-        expected_overlap = r"26.4\% of Line top-10 slots involved in overlap [16.8\% redundant] vs. 0\% in AST"
+        expected_overlap = r"26.4\% of Line top-10 slots involved in overlap [16.8\% redundant], vs. 0\% in AST No-Header and 0.8\% in AST+Header"
         for name in ["section_results.tex", "section_discussion_threats.tex"]:
             content = (PAPER_DIR / name).read_text(encoding="utf-8")
             assert "26.4% overlap in Line vs." not in content, f"Found imprecise overlap phrasing in paper/{name}"
@@ -220,11 +220,11 @@ class TestPaperAndCodeAudit:
         assert cs_data["evidence_counts"]["excluded_pairs"] == 56
 
         results_tex = (PAPER_DIR / "section_results.tex").read_text(encoding="utf-8")
-        assert "Common Support" in results_tex
+        assert "common support" in results_tex.lower()
         assert "826/882" in results_tex
         assert "0.600" in results_tex
         assert "0.489" in results_tex
-        assert "+0.111" in results_tex
+        assert "-0.111" in results_tex
         assert "17.3\\%" in results_tex
 
         threats_tex = (PAPER_DIR / "section_discussion_threats.tex").read_text(encoding="utf-8")
