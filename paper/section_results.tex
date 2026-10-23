@@ -10,7 +10,6 @@ At reranking, \lineH\ achieves the highest \text{NDCG@10} (0.621, 95\% CI $[0.55
 
 Dense encoding improves NDCG@10 over BM25 by $0.118$--$0.139$ with headers, and reranking adds another $0.037$--$0.070$. 
 Header gains differ across chunking strategies. For AST chunks, they grow with retriever capacity: negligible for BM25 ($+0.006$), moderate for dense retrieval ($+0.092$), and large for reranking ($+0.146$). For line windows, gains are modest at every stage ($+0.028$, $+0.030$, $+0.041$). 
-Because pooling spanned all 12 systems at top-5, $\text{Judged@5}$ is $100.0\%$ for all configurations. 
 Binary preference (\texttt{bpref}) orders the four conditions identically to NDCG@10 at every tier (Table~\ref{tab:main}). At the reranking tier: Line+H $0.353 >$ Line No-H $0.300 >$ AST+H $0.241 >$ AST No-H $0.170$. This indicates that rankings are robust to unjudged items at deeper ranks. Two patterns deserve mention: at the dense tier AST+Header attains higher NDCG@1 (0.620 vs. 0.580) and MRR@10 (0.910 vs. 0.883) than Line+Header, although it trails on NDCG@10 (0.450 vs. 0.551); reranking improves every condition over dense except AST No-Header, dropping from 0.358 to 0.341, consistent with cross-encoder reliance on header cues for isolated AST chunks.
 
 \subsection{Hypothesis Testing and RQ Analyses}

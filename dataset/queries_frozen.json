@@ -11,7 +11,7 @@
   "provenance": {
     "source_platforms": "Real-world tech recruitment platforms in Vietnam (TopCV, ITviec, VietnamWorks)",
     "collection_date": "September 2026",
-    "extractor_model": "gemini-1.5-flash",
+    "extractor_model": "gemini-2.5-flash",
     "extraction_prompt": "Analyze the following Job Description (JD) text and extract structured technical competencies conforming to the schema: title (string), level (string), domain (string), summary (string), mandatory_skills (list of objects with skill_name, category, importance, weight), preferred_skills (list of objects with skill_name, category, importance, weight).",
     "primary_query_format": "Job Title: {title}. Domain: {domain}. Mandatory Technical Skills: {mandatory_skills}.",
     "sensitivity_query_format": "Raw full text of Job Description file"

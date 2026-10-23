@@ -5,10 +5,9 @@ To separate chunk boundaries from contextual metadata, we employ a $2 \times 2$ 
 
 \subsection{Corpus, Candidate Space, and Curation}
 \label{sec:approach:corpus}
-Our corpus comprises 40 open-source GitHub repositories (20 Java Spring Boot, 20 React/TypeScript) spanning 189 source files (\texttt{sampling\_\allowbreak frame\_\allowbreak log.json}) curated from projects exhibiting production patterns (controllers, services, DTOs, custom hooks, Redux stores, UI components). 
-To focus on authentic capability evidence and avoid build artifacts or mocks, curation targeted core architectural modules (mean 4.7 files/repo) selected via directory conventions prior to query extraction and without access to retrieval results. 
-Licenses encompass 19 MIT (47.5\%), 16 with no explicit license (GitHub default copyright, 40.0\%), 4 Apache-2.0 (10.0\%), and 1 AGPL-3.0 (2.5\%); all source text is redistributed for non-commercial research replication. 
-Queries represent 25 job descriptions (15 Java, 10 React/TS) extracted via a frozen prompt on \texttt{gemini-\allowbreak 1.5-flash} (run on 2026-10-09; \texttt{queries\_\allowbreak frozen.json}). Each query combines title, domain, and 5--8 mandatory skills. 
+Our corpus comprises 40 open-source GitHub repositories (20 Java Spring Boot, 20 React/TypeScript) spanning 189 source files (\texttt{sampling\_\allowbreak frame\_\allowbreak log.json}) with production patterns (controllers, services, DTOs, custom hooks, Redux stores, UI components). To focus on authentic evidence, curation targeted core architectural modules (mean 4.7 files/repo) via directory conventions prior to query extraction and without access to retrieval results. 
+Licenses encompass 19 MIT (47.5\%), 16 with no explicit license (GitHub default copyright, 40.0\%), 4 Apache-2.0 (10.0\%), and 1 AGPL-3.0 (2.5\%); all source text is redistributed for non-commercial research replication and will be removed upon request by rights holders. 
+Queries represent 25 job descriptions (15 Java, 10 React/TS) extracted via a frozen prompt on \texttt{gemini-\allowbreak 2.5-flash} (run on 2026-10-09; \texttt{queries\_\allowbreak frozen.json}). Each query combines title, domain, and 5--8 mandatory skills. 
 Retrieval evaluates across all 40 repositories without language filtering: 434 line chunks and 438 AST chunks (872 instances across strategies).
 
 \subsection{Factorial Conditions and Retrieval Pipeline}
