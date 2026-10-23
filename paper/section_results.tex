@@ -8,8 +8,8 @@ At reranking, \lineH\ achieves the highest \text{NDCG@10} (0.621, 95\% CI $[0.55
 
 \input{tables/table_1_paper.tex}
 
-Dense encoding improves NDCG@10 over BM25 by .118$--.139$ with headers; reranking adds another .037$--.070$. For AST chunks, header gains scale with retriever capacity: $+0.006$ (BM25), $+0.092$ (dense), and $+0.146$ (reranking). For line windows, gains remain modest throughout ($+0.028$, $+0.030$, $+0.041$).
-Binary preference (\texttt{bpref}) orders the four conditions identically to NDCG@10 at every tier (Table~\ref{tab:main}). At the reranking tier: Line+H .353 >$ Line No-H .300 >$ AST+H .241 >$ AST No-H .170$. The bpref results preserve the same condition ordering, though unjudged items at ranks 6--10 cannot be ruled out. At the dense tier, AST+Header attains higher NDCG@1 (0.620 vs. 0.580) and MRR@10 (0.910 vs. 0.883) than Line+Header, but trails on NDCG@10 (0.450 vs. 0.551). Reranking improves all conditions over dense except AST No-Header (0.358 to 0.341), consistent with cross-encoder reliance on headers for isolated AST units.
+Dense encoding improves NDCG@10 over BM25 by 0.118--0.139 with headers; reranking adds another 0.037--0.070. For AST chunks, header gains scale with retriever capacity: $+0.006$ (BM25), $+0.092$ (dense), and $+0.146$ (reranking). For line windows, gains remain modest throughout ($+0.028$, $+0.030$, $+0.041$).
+Binary preference (\texttt{bpref}) orders the four conditions identically to NDCG@10 at every tier (Table~\ref{tab:main}). At the reranking tier: \lineH\ ($0.353$) $>$ \lineN\ ($0.300$) $>$ \astH\ ($0.241$) $>$ \astN\ ($0.170$). The bpref results preserve the same condition ordering, though unjudged items at ranks 6--10 cannot be ruled out. At the dense tier, AST+Header attains higher NDCG@1 (0.620 vs. 0.580) and MRR@10 (0.910 vs. 0.883) than Line+Header, but trails on NDCG@10 (0.450 vs. 0.551). Reranking improves all conditions over dense except AST No-Header (0.358 to 0.341), consistent with cross-encoder reliance on headers for isolated AST units.
 
 \subsection{Hypothesis Testing and RQ Analyses}
 \label{sec:results:hypotheses}

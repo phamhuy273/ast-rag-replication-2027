@@ -1,8 +1,9 @@
 \begin{table}[t]
 \caption{Hypothesis tests on NDCG@10 at reranking tier ($N=25$).}
 \label{tab:statistical_hypothesis_tests}
-\centering\footnotesize
+\centering
 \resizebox{\columnwidth}{!}{%
+\begin{threeparttable}
 \begin{tabular}{@{}llccc@{}}
 \toprule
 ID & Contrast ($A - B$) & $\Delta$ [95\% CI] & W/L/T & $p_{\mathrm{Holm}}$ \\
@@ -16,8 +17,10 @@ Comp 4 & \lineH\ vs. \lineN & $+0.041$ $[-0.012, +0.093]$ & 15/10/0 & $0.2411$ \
 \multicolumn{5}{@{}l}{\emph{Exploratory (outside the Holm family)}} \\
 Comp 5 & \astH\ vs. \lineH & $-0.134$ $[-0.199, -0.070]$ & 5/20/0 & $0.0003^{\dagger}$ \\
 \bottomrule
-\end{tabular}%
+\end{tabular}
+\begin{tablenotes}\scriptsize
+\item[] W/L/T: queries where $A$ wins, loses, or ties against $B$. Significance follows $p_{\mathrm{Holm}}$ (*~$<0.05$, **~$<0.01$, ***~$<0.001$). $^{\dagger}$~Unadjusted $p$ (exploratory).
+\end{tablenotes}
+\end{threeparttable}%
 }
-\vspace{2pt}
-\parbox{\columnwidth}{\footnotesize W/L/T: queries where $A$ wins, loses, or ties against $B$. Significance follows $p_{\mathrm{Holm}}$ (* $<0.05$, ** $<0.01$, *** $<0.001$). $^{\dagger}$Unadjusted $p$ (exploratory).}
 \end{table}
