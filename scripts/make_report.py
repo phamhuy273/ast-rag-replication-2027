@@ -1200,10 +1200,11 @@ def generate_paper_figures(data: Dict[str, Any]):
 
     delta_ast = ast_pts[1] - ast_pts[0]
     delta_line = line_pts[1] - line_pts[0]
-    ax.text(0.5, (ast_pts[0] + ast_pts[1]) / 2 - 0.03, f"$\\Delta = +{delta_ast:.3f}$***",
-            ha="center", color="#b2182b", fontsize=7.0, fontweight="bold")
-    ax.text(0.5, (line_pts[0] + line_pts[1]) / 2 + 0.02, f"$\\Delta = +{delta_line:.3f}$ (n.s.)",
-            ha="center", color="#2166ac", fontsize=7.0)
+    bbox_props = dict(boxstyle="square,pad=0.15", fc="white", ec="none", alpha=0.9)
+    ax.text(0.5, (ast_pts[0] + ast_pts[1]) / 2 - 0.038, f"$\\Delta = +{delta_ast:.3f}$***",
+            ha="center", color="#b2182b", fontsize=7.0, fontweight="bold", bbox=bbox_props)
+    ax.text(0.5, (line_pts[0] + line_pts[1]) / 2 + 0.025, f"$\\Delta = +{delta_line:.3f}$ (n.s.)",
+            ha="center", color="#2166ac", fontsize=7.0, bbox=bbox_props)
 
     fig1_path = PAPER_FIGS_DIR / "fig1.pdf"
     fig.savefig(fig1_path, format="pdf", bbox_inches="tight", pad_inches=0.02, metadata=clean_metadata)

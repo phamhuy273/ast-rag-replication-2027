@@ -9,6 +9,7 @@ __pycache__/
 *.blg
 *.log
 *.out
+*.toc
 *.synctex.gz
 *.fls
 *.fdb_latexmk
