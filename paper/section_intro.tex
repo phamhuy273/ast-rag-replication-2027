@@ -3,7 +3,7 @@
 
 Locating source code that provides concrete evidence for a technical requirement is fundamental in software analysis and capability assessment. 
 While classical requirements traceability links formal specifications to code artifacts~\cite{antoniol2002traceability,gao2024triad}, modern software engineering frequently demands verifying whether a codebase implements higher-level framework capabilities (e.g., reactive state management or token authentication). 
-We formalize this task as \textbf{Requirement \& Technical Capability Evidence Retrieval}: given natural-language technical requirements---instantiated via mandatory skill specifications from job descriptions (JDs)---the objective is to retrieve the specific code chunks that directly evidence their concrete implementation across multi-file repositories, without requiring explicit requirement IDs.
+We formulate this task as \textbf{requirement and technical-capability evidence retrieval}: given natural-language technical requirements---instantiated via mandatory skill specifications from job descriptions (JDs)---the objective is to retrieve the specific code chunks that directly evidence their concrete implementation across multi-file repositories, without requiring explicit requirement IDs.
 
 In retrieval-augmented generation (RAG) pipelines for software engineering, source code must be segmented into chunks for neural encoding. 
 Chunking via abstract syntax trees (ASTs) is widely advocated to preserve semantic units (methods, declarations)~\cite{zhang2025cast}. 
