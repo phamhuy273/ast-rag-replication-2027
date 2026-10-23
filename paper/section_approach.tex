@@ -6,10 +6,10 @@ To separate chunk boundaries from contextual metadata, we employ a $2 \times 2$ 
 \subsection{Corpus, Candidate Space, and Curation}
 \label{sec:approach:corpus}
 Our corpus comprises 40 open-source GitHub repositories (20 Java Spring Boot, 20 React/TypeScript) spanning 189 source files. 
-As documented in \texttt{sampling\_frame\_log.json}, repositories were curated from public GitHub projects exhibiting production architectural patterns (controllers, services, DTOs, custom hooks, Redux stores, UI components). 
+As documented in \texttt{sampling\_\allowbreak frame\_\allowbreak log.json}, repositories were curated from public GitHub projects exhibiting production architectural patterns (controllers, services, DTOs, custom hooks, Redux stores, UI components). 
 To focus evaluation on authentic capability evidence and avoid diluting the corpus with build artifacts, third-party libraries, test mocks, or auto-generated configuration, curation targeted the core functional architecture modules (mean 4.7 files per repository, 189 files total) where business logic, architectural patterns, and framework capabilities reside.
 Repository licenses encompass 19 MIT (47.5\%), 16 Public GitHub default copyright (40.0\%), 4 Apache-2.0 (10.0\%), and 1 GNU AGPL-3.0 (2.5\%); all source text is redistributed in our replication package under original author copyright.
-Queries represent 25 public job descriptions (15 Java backend, 10 React/TypeScript frontend) with mandatory technical skill requirements extracted via a frozen prompt on \texttt{gemini-1.5-flash} (\texttt{queries\_frozen.json}). 
+Queries represent 25 public job descriptions (15 Java backend, 10 React/TypeScript frontend) with mandatory technical skill requirements extracted via a frozen prompt on \texttt{gemini-\allowbreak 1.5-flash} (\texttt{queries\_\allowbreak frozen.json}). 
 For each query, retrieval evaluates across the full candidate space: 434 chunks for line conditions and 438 chunks for AST conditions (872 total chunks in the corpus).
 
 \subsection{Factorial Conditions and Retrieval Pipeline}
